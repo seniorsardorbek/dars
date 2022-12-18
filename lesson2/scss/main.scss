@@ -1,4 +1,4 @@
-*::after,
+ *::after,
 ::before {
   margin: 0;
   padding: 0;
@@ -25,7 +25,7 @@ li {
   justify-content: space-between;
   font-family: "Barlow";
   margin-top: 15px;
-  min-width: 1280px;
+  max-width: 1280px;
 
   & nav {
     display: flex;
@@ -92,11 +92,15 @@ li {
   line-height: 25px;
   text-align: center;
   color: #fefcf7;
-  background: #66d2cf;
+  background: #0e8784;
   border-radius: 6px;
   width: fit-content;
   padding: 15px 30px;
   border: none;
+  &:hover {
+    background: #66d2cf;
+    transition: 0.5s ease-in-out;
+  }
 }
 
 .collection {
@@ -224,11 +228,13 @@ li {
       border-radius: 50%;
       background: transparent;
       border: 2px solid #0e8784;
+      z-index: 999;
     }
     .line {
       width: 365px;
       height: 4px;
       background-color: #fdd6ba;
+      margin: 0 -18px;
     }
   }
   .how__work-boxes {
@@ -259,19 +265,24 @@ li {
   }
 }
 
+
+
+
 .footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 1280px;
   height: 120px;
-  border-radius: 15px;
+  border-radius: 8px;
   background: #2c343e;
   margin-top: 200px;
   margin-bottom: 0;
   ul {
     display: flex;
     gap: 32px;
+    flex-grow: 1;
+    padding: 100px;
     a {
       font-weight: 700;
       font-size: 12px;
@@ -290,6 +301,9 @@ li {
   gap: 25px;
   a {
     color: white;
+    &:hover{
+      color: #FDD6BA;
+    }
   }
 }
 
@@ -388,9 +402,9 @@ li {
       gap: 15px;
       border-bottom: 1px solid #83888f5a;
       width: 215px;
-      &:hover{
-        h1{
-            color: #333d4b4b;
+      &:hover {
+        h1 {
+          color: #333d4b4b;
         }
       }
       h1 {
@@ -402,10 +416,14 @@ li {
     }
   }
   .sell__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     width: 780px;
     .sel__title {
       display: flex;
-      gap: 80px;
+      justify-content: space-between;
+      padding: 0 20px;
       h1 {
         font-weight: 900;
         font-size: 40px;
@@ -422,7 +440,7 @@ li {
     .sel__section-boxes {
       display: flex;
       gap: 14px;
-      .sell-box{
+      .sell-box {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -454,22 +472,57 @@ li {
           top: 0;
           left: 0;
         }
-        &:hover{
+        &:hover {
           background: rgba(253, 214, 186, 1);
         }
       }
       input {
         appearance: none;
       }
-      input:checked + .sell-box{
+      input:checked + .sell-box {
         background-color: #0e8784;
         h1 {
           color: white;
         }
-        p{
+        p {
           color: white;
         }
       }
     }
   }
 }
+.sell__information {
+  background-color: #2c343e;
+  border-radius: 10px;
+  padding: 31px 64px;
+  width: 630px;
+  display: flex;
+  flex-direction: column;
+  margin: 84px 0;
+  gap: 10px;
+  h5 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    margin: 0;
+  }
+  P {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 40px;
+    color: #ffffff;
+    margin: 0;
+  }
+}
+.sel__sections {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+@import "responsive"
